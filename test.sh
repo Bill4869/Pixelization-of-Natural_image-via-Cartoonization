@@ -1,0 +1,1 @@
+python3 ./test.py --dataroot ./samples --resize_or_crop resize_and_crop --gpu_ids 0 --how_many 20 --which_epoch latest

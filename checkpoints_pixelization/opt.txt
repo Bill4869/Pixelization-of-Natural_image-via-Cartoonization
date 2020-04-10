@@ -1,0 +1,21 @@
+------------ Options -------------
+batchSize: 1
+cartoon_output: ./input/cartoon_input/testA
+checkpoints_dir: ./checkpoints_pixelization
+dataroot: ./input/cartoon_input
+gpu: 0
+gpu_ids: [0]
+how_many: 10
+isTrain: False
+loadSize: 320
+model_path: ./cartoonGan/pretrained_model
+natural_input: ./input/natural_input
+ndf: 64
+ngf: 64
+no_dropout: False
+phase: test
+resize_or_crop: resize_and_crop
+results_dir: ./results_pixelization/
+style: Hosoda
+which_epoch: 150
+-------------- End ----------------
