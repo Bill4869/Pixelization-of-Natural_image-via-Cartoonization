@@ -10,7 +10,7 @@
 - Torch
 ## Dataset
 ### Training Dataset (Deep Unsupervised Pixelization)
-We collect 3000 portrait images and 900 pixel arts for traning our method. The folders named `trainA` and `trainB` contain the portrait images and pixel arts respectively. ([aligned celeba](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [clip arts and pixel arts](https://drive.google.com/open?id=1qDXB5g0Cb0VwISXwnfeiehPHuTgxWhdG).
+We collect 3000 portrait images and 900 pixel arts for traning our method. The folders named `trainA` and `trainB` contain the portrait images and pixel arts respectively. ([aligned celeba](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [clip arts and pixel arts](https://drive.google.com/open?id=1qDXB5g0Cb0VwISXwnfeiehPHuTgxWhdG)).
 
 DUP's pretrained model is in `./checkpoints_pixelization`.  
 CartoonGAN's pretained models are in `./cartoonGan/pretrained_model`.
