@@ -34,7 +34,7 @@ python3 ./test.py --dataroot ./samples --resize_or_crop resize_and_crop --gpu_id
 ``` bash
 python ./main.py --loadSize 320
 ```
-* Note : 
+* Note :  
 `main.py` will cartoonized portrait images in `./input/natural_input` and output to `./input/cartoon_input/testA`  
 Then `testA` and `testB` in `./input/cartoon_input` will be pixelized and depixelized respectivelty.  
 More testing flags in the file `./options/base_options.py`.  
