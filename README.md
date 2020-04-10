@@ -1,41 +1,41 @@
-# Deep-Unsupervised-Pixelization
-## Paper
-[Deep Unsupervised Pixelization](http://www.shengfenghe.com/uploads/1/5/1/3/15132160/sa2018_pixelization.pdf) and [Supplementary Material](http://www.shengfenghe.com/uploads/1/5/1/3/15132160/sa2018_supp.pdf).  
-Chu Han^, Qiang Wen^, Shengfeng He*, Qianshu Zhu, Yinjie Tan, Guoqiang Han, and Tien-Tsin Wong (^joint first authors).  
-ACM Transactions on Graphics (SIGGRAPH Asia 2018 issue), 2018.  
-## ![Our teaser](./teaser/teaser.png)
+# Pixelization of Natural Image via Cartoonization
+## References
+- CartoonGAN: Generative Adversarial Networks for Photo Cartoonization
+- Deep Unsupervised Pixelization
 ## Requirement
 - Python 3.5
 - PIL
 - Numpy
 - Pytorch 0.4.0
-- Ubuntu 16.04 LTS
+- Torch
 ## Dataset
-### Training Dataset
-We collect 900 clip arts and 900 pixel arts for trianing our method. The folders named `trainA` and `trainB` contain the clip arts and pixel arts respectively [here](https://drive.google.com/open?id=1qDXB5g0Cb0VwISXwnfeiehPHuTgxWhdG).
+### Training Dataset (Deep Unsupervised Pixelization)
+We collect 3000 portrait images and 900 pixel arts for traning our method. The folders named `trainA` and `trainB` contain the portrait images and pixel arts respectively. ([aligned celeba](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [clip arts and pixel arts](https://drive.google.com/open?id=1qDXB5g0Cb0VwISXwnfeiehPHuTgxWhdG).
+
+DUP's pretrained model is in `./checkpoints_pixelization`.  
+CartoonGAN's pretained models are in `./cartoonGan/pretrained_model`.
 ### Testing Dataset
-Create the folders `testA` and `testB` in the directory `./samples/`. Note that `testA` and `testB` contain the clip arts to be pixelized and pixel arts to be depixelized respectively.
+#### DUP
+Create the folders `testA` and `testB` in a certain directory. Note that `testA` and `testB` contain the cartoon arts to be pixelized and pixel arts to be depixelized respectively.
+#### CartoonGAN
+Input natural images - portrait [aligned celeba](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
 ## Training
-* To train a model:
+* To train a model (DUP):
 ``` bash
-python3 ./train.py --dataroot ./samples --resize_or_crop crop --gpu_ids 0
-```  
-or you can directly:
-``` bash 
-$ bash ./train.sh
-```  
-You can check the losses of models in the file `./checkpoints_pixelization/loss_log.txt`.  
-More training flags in the files `./options/base_options.py` and `./options/train_options.py`.
+python3 ./train.py --dataroot ./samples --resize_or_crop resize_and_crop --gpu_ids 0
+```
 ## Testing
 * After training, all models have been saved in the directory `./checkpoints_pixelization/`.
-* To test a model:
+* To test a model (DUP):
 ``` bash
-python3 ./test.py --dataroot ./samples --no_dropout --resize_or_crop crop --gpu_ids 0 --how_many 1 --which_epoch 200
-```  
-or you can directly:
-``` bash 
-$ bash ./test.sh
-```  
+python3 ./test.py --dataroot ./samples --resize_or_crop resize_and_crop --gpu_ids 0 --how_many 1 --which_epoch 150 --loadSize 256
+```
+* To test a model (Pixelization of Natural Image via Cartoonization)
+``` bash
+python ./main.py --loadSize 320
+```
+* Note : 
+`main.py` will cartoonized portrait images in `./input/natural_input` and output to `./input/cartoon_input/testA`  
+Then `testA` and `testB` in `./input/cartoon_input` will be pixelized and depixelized respectivelty.  
 More testing flags in the file `./options/base_options.py`.  
 All testing results will be shown in the directory `./results_pixelization/`.
-# Pixelization of Natural Image via Cartoonization
