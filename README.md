@@ -1,4 +1,5 @@
 # Pixelization of Natural Image via Cartoonization
+![teaser](./teaser.JPG)
 ## References
 - CartoonGAN: Generative Adversarial Networks for Photo Cartoonization
 - Deep Unsupervised Pixelization
