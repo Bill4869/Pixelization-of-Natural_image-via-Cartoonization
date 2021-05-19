@@ -1,4 +1,5 @@
 # Pixelization of Natural Image via Cartoonization
+[発表スライド](https://drive.google.com/file/d/1SXw_AkkYskp46p1lv4bVvB2pHwvY3OzQ/view?usp=sharing)
 ![teaser](./teaser.JPG)
 ## References
 - CartoonGAN: Generative Adversarial Networks for Photo Cartoonization
